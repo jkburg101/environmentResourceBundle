@@ -49,3 +49,5 @@ By default, resourceBundles first look for .class files that have the specified 
 if no .class file is found. The annotation @EnvironmentResourceBundle will, at compile time, create a .class file in your 
 code with the same name as the one provided, essentially overriding the .properties file. That allows it to read through the corresponding
 file, and then provide your application with properties having variable substitution. 
+
+//TODO: will add package availability on MavenCentral
