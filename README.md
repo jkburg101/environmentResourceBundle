@@ -21,7 +21,7 @@ This will print out your welcome message, and it looks fantastic! Until you need
 production environment. The environmentResourceBundle library makes this simple and natural, by allowing you to specify variables
 inside your properties files.
 ```
-welcome.text=Hello there! Welcome to ${host_server}
+welcome.text=Hello there! Welcome to ${host_server}!
 ```
 Then add one line of code:
 ```java
@@ -35,7 +35,14 @@ public static void main(String[] args) {
 ## Where does it search for variables
 Variables can be pulled from two places: first from Java system properties, then, if that associated property is not found, system
 environment variables. If a variable is not found that matches in either of those two places, the property value will remain unchanged
-in the application.
+in the application. 
+
+In our example above, if an application was started as such:
+
+```
+java -Dhost_server=github.com -jar MyApplication.jar
+```
+Then, as expected, the output would show as "Hello there! Welcome to github.com!"
 
 ## How does it work under the hood? 
 By default, resourceBundles first look for .class files that have the specified resourceBundle name, and then .properties files
