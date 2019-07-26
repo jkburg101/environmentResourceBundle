@@ -1,0 +1,4 @@
+rootProject.name = 'environmentResourceBundle'
+include 'environmentResourceBundle-processor'
+include 'environmentResourceBundle-test'
+

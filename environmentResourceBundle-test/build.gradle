@@ -1,0 +1,7 @@
+dependencies {
+    implementation project(':environmentResourceBundle-processor')
+    annotationProcessor project(':environmentResourceBundle-processor')
+    testImplementation project(':environmentResourceBundle-processor')
+    testAnnotationProcessor project(':environmentResourceBundle-processor')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
