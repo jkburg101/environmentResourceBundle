@@ -25,19 +25,19 @@ welcome.text=Hello there! Welcome to ${host_server}
 ```
 Then add one line of code:
 ```java
-**@EnvironmentResourceBundle(names={"userInterface"})**
+@EnvironmentResourceBundle(names={"userInterface"})
 public static void main(String[] args) {
   ResourceBundle userInterfaceBundle = ResourceBundle.getBundle("userInterface");
   System.out.println(userInterfaceBundle.getString("welcome.text"));
 }
 ```
 
-##Where does it search for variables
+## Where does it search for variables
 Variables can be pulled from two places: first from Java system properties, then, if that associated property is not found, system
 environment variables. If a variable is not found that matches in either of those two places, the property value will remain unchanged
 in the application.
 
-##How does it work under the hood? 
+## How does it work under the hood? 
 By default, resourceBundles first look for .class files that have the specified resourceBundle name, and then .properties files
 if no .class file is found. The annotation @EnvironmentResourceBundle will, at compile time, create a .class file in your 
 code with the same name as the one provided, essentially overriding the .properties file. That allows it to read through the corresponding
